@@ -2,6 +2,7 @@ from record_audio import recordAudio
 from transcript_audio import transcriptAudio
 from computer_voice import computerVoice
 from random_joke import randomJoke
+import os
 
 
 computerVoice(f"Hello! I am a joker bot. Would you like to hear a joke?")
@@ -13,6 +14,8 @@ while True:
         computerVoice("Sorry, I couldn't understand you. Could you say that again?")
     elif "no" in transcript_audio or "nope" in transcript_audio:
         computerVoice("That's ok. See you next time. Bye!")
+        os.system("rm *.mp3")
+        os.system("rm *.wav")
         break
     elif "yes" in transcript_audio or "yeah" in transcript_audio:
         computerVoice(randomJoke())
